@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1,width=device-width">
+        <title>Exercise: Airport Distances</title>
+        <link rel="stylesheet" type="text/css" href="main.css"/>
+        <script src="jquery-2.1.1.min.js"></script>
+        <script src="flights.js"></script>
+    </head>
+    
+    <body>
+    
+    <div id="airportApp">
+    
+      <div id="greeting">
+        <p>Hello traveler!</p>
+        <span id="button-reset">Reset</span>
+      </div>
+      
+      <fieldset id="question-starting-airport">
+        <legend>What's your airport?</legend>
+        
+        <input type="radio" name="depart-airport" id="depart-JFK" value="JFK"/>
+        <label for="depart-JFK">JFK</label>
+        <input type="radio" name="depart-airport" id="depart-LAX" value="LAX"/>
+        <label for="depart-LAX">LAX</label>
+        <input type="radio" name="depart-airport" id="depart-LAS" value="LAS"/>
+        <label for="depart-LAS">LAS</label>
+        <input type="radio" name="depart-airport" id="depart-PDX" value="PDX"/>
+        <label for="depart-PDX">PDX</label>
+      </fieldset>
+      
+      <fieldset id="question-destination-airport">
+        <legend>Where are you going?</legend>
+        
+        <input type="radio" name="arrive-airport" id="arrive-JFK" value="JFK"/>
+        <label for="arrive-JFK">JFK</label>
+        <input type="radio" name="arrive-airport" id="arrive-LAX" value="LAX"/>
+        <label for="arrive-LAX">LAX</label>
+        <input type="radio" name="arrive-airport" id="arrive-LAS" value="LAS"/>
+        <label for="arrive-LAS">LAS</label>
+        <input type="radio" name="arrive-airport" id="arrive-PDX" value="PDX"/>
+        <label for="arrive-PDX">PDX</label>
+      </fieldset>
+      
+      <div id="message-destination">
+        <p> </p>
+        <div class="tourist-image"> </div>
+      </div>
+      
+    </div>
+    
+    <script>
+        $( "input:radio[name=depart-airport]" ).click(showQuestion);
+        $( "input:radio" ).change(travelMessage);
+        $( "#button-reset" ).click(resetApp);
+    </script>
+    
+    </body>
+</html>

@@ -1,0 +1,173 @@
+@charset "utf-8";
+
+/*BEGIN override browser defaults*/
+body {
+	margin: 0;
+	font-size: 10px;	
+}
+
+p, h1, h2, h3, h4, h5, h6, ul, ol, fieldset, legend, label {
+	margin: 0;
+	padding: 0;
+}
+
+p, span, h1, h2, h3, h4, h5, h6, ul, ol, legend, label, input[type=button] {
+	font-size: 1.4em;
+	font-weight: normal;
+}
+
+fieldset, input[type=button] {border: none;}
+/*END override browser defaults*/
+
+
+/*BEGIN app styles*/
+body {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: center url(img/pattern-airplanes.png);
+}
+
+div#airportApp {
+	width: 100%;
+	height: 100%;
+	min-height: 480px;
+	box-sizing: border-box;
+	padding: 5%;
+	margin: 0 auto;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #ffffff;
+	background: #00b398; /*pantone 3275*/
+}
+
+div#airportApp div,
+fieldset {
+	display: inline-block;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+fieldset {height: 20%;}
+
+div#airportApp div#greeting {
+	display: table;
+	height: 10%;
+	position: relative;
+}
+div#greeting p {
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+/*question styles*/
+legend {
+	margin: 0.5em 0;
+	margin-left: -4px; /*used to left-align with labels*/
+	color: #ffffff; /*needed for IE*/
+}
+input[type=radio] {display: none;}
+label {
+	display: inline-block;
+	height: 36px;
+	box-sizing: border-box;
+	padding: 10px 0;
+	margin-left: -4px; /*accounts for the space btwn HTML objects*/
+	margin-right: 8px;
+	text-align: center;
+	color: #5b6770; /*pantone 431*/
+	background: #d0d3d4; /*pantone 427*/
+	box-shadow: 3px 3px #7c878e; /*pantone 430*/
+}
+label:hover,
+input[type=radio]:checked + label {
+	cursor: pointer;
+	color: #af6d04; /*pantone 139*/
+	background: #ffc658; /*pantone 135*/
+	box-shadow: 3px 3px #de7c00; /*pantone 138*/
+}
+input[type=radio]:checked + label {
+	cursor: default;
+}
+
+fieldset#question-starting-airport {
+	padding-left: 4px; /*matches negative margin-left of child objects*/
+}
+fieldset#question-starting-airport label {width: calc(25% - 8px);}
+
+fieldset#question-destination-airport {
+	display: none;
+	padding-left: 4px; /*matches negative margin-left of child objects*/
+	background-color: #00b398; /*pantone 3275*/ /*IE hack needed for fadeIn / fadeOut to function*/
+}
+fieldset#question-destination-airport label {width: calc(33.33% - 8px);}
+
+input#arrive-JFK.hide + label,
+input#arrive-LAX.hide + label,
+input#arrive-LAS.hide + label,
+input#arrive-PDX.hide + label {
+	display: none;
+}
+
+/*answer styles*/
+div#message-destination {
+	display: none;
+	height: 50%;
+	padding-top: 44px;
+	position: relative;
+}
+div#message-destination p {
+	position: absolute;
+	bottom: calc(100% - 34px);
+	left: 0;
+}
+div#message-destination .tourist-image {
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+}
+div#message-destination #tourist-JFK {background-image: url(img/tourist-newYork.png);}
+div#message-destination #tourist-LAX {background-image: url(img/tourist-losAngeles.png);}
+div#message-destination #tourist-LAS {background-image: url(img/tourist-lasVegas.png);}
+div#message-destination #tourist-PDX {background-image: url(img/tourist-portland.png);}
+
+/*reset styles*/
+#button-reset {
+	display: none;
+	box-sizing: border-box;
+	padding: 4px 12px;
+	position: absolute;
+	top: calc(50% - 10px); /*centers button*/
+	right: 0;
+	text-align: center;
+	text-transform: uppercase;
+	color: #00685e; /*pantone 329*/
+	background: #9cdbd9; /*pantone 324*/
+	box-shadow: 3px 3px #00685e; /*pantone 329*/
+	outline: none;
+}
+#button-reset:hover {
+	cursor: pointer;
+	color: #ffffff;
+	background: #00685e; /*pantone 329*/
+	box-shadow: none;
+}
+
+@media screen and (min-width:500px), screen and (min-height:550px) {
+	fieldset {height: 15%;}
+	div#message-destination {height: 60%;}
+}
+
+@media screen and (min-width:750px) {
+	div#airportApp {
+		max-width: 600px;
+		padding: 5% 3% 3%;
+	}
+	div#message-destination #tourist-JFK {background-image: url(img/tourist-newYork-large.png);}
+	div#message-destination #tourist-LAX {background-image: url(img/tourist-losAngeles-large.png);}
+	div#message-destination #tourist-LAS {background-image: url(img/tourist-lasVegas-large.png);}
+	div#message-destination #tourist-PDX {background-image: url(img/tourist-portland-large.png);}
+}
+/*END app styles*/
