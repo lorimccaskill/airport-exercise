@@ -4,3 +4,5 @@ This small project is a succinct example of how I work. The Airport Exercise is 
 
 * z_originalFiles contains the documents provided for the design/code test.
 * README.txt (found in z_originalFiles) includes full instructions for the test.
+
+You can see the project in action [here](http://fewwords.org/testing/airportExercise/index.html).
